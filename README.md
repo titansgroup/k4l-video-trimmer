@@ -1,4 +1,6 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/knowledge4life/k4l-video-trimmer.svg)](https://github.com/knowledge4life/k4l-video-trimmer/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/knowledge4life/k4l-video-trimmer.svg)](https://github.com/knowledge4life/k4l-video-trimmer/network)
 
 # VideoTrimmer
 
