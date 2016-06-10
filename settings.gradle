@@ -1,0 +1,1 @@
+include ':k4l-video-trimmer', ':sample-app'
