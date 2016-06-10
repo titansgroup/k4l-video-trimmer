@@ -1,4 +1,4 @@
-# VideoTrimmer - A library with UI and mechanisms to trim local videos on Android applications.
+# VideoTrimmer
 
 #### This project aims to provide an ultimate and flexible video trimmer experience.
 
