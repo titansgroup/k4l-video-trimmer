@@ -72,7 +72,7 @@
 - Thumbnails are only added to the timeline once all of them are created in a background thread
 - As for now there is no way of personalising the component
 - We only support MP4 files
-- Methods count: 5768 from Isoparser + [CHECK HOW MANY METHODS THERE ARE IN OUR LIB] from K4l-video-trimmer
+- Methods count: 5768 from Isoparser + 237 from K4l-video-trimmer
     
 # Compatibility
   
