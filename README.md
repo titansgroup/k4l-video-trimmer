@@ -1,3 +1,5 @@
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
+
 # VideoTrimmer
 
 #### This project aims to provide an ultimate and flexible video trimmer experience.
