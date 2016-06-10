@@ -2,7 +2,7 @@
 
 #### This project aims to provide an ultimate and flexible video trimmer experience.
 
-<img src="https://github.com/knowledge4life/k4l-video-trimmer/raw/master/Screenshots/Screenshot.png" alt="VideoTrimmer Screenshot" width="400" height="568" />
+<img src="https://raw.githubusercontent.com/knowledge4life/k4l-video-trimmer/master/screenshot/screenshot.png" alt="VideoTrimmer Screenshot" width="360" height="640" />
 
 # Usage
 
@@ -31,9 +31,7 @@
     ```
 
 # Default destination folder
-    ```java
     Environment.getExternalStorageDirectory()
-    ```
 
 # Here is an example of a listener implementation.
 
