@@ -8,6 +8,8 @@
 
 <img src="https://raw.githubusercontent.com/knowledge4life/k4l-video-trimmer/master/screenshot/screenshot.png" alt="VideoTrimmer Screenshot" width="360" height="640" />
 
+## [Watch a DEMO here](http://gfycat.com/UnnaturalConsiderateFiddlercrab)
+
 # Usage
 
 *For a working implementation, please have a look at the Sample Project - sample*
