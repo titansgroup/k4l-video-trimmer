@@ -35,6 +35,9 @@ import life.knowledge4.videotrimmer.R;
 
 public class Thumb {
 
+    public static final int LEFT = 0;
+    public static final int RIGHT = 1;
+
     private int mIndex;
     private float mVal;
     private float mPos;
