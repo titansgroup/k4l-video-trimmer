@@ -130,7 +130,7 @@ public class K4LVideoTrimmer extends FrameLayout {
         mListeners.add(new OnProgressVideoListener() {
             @Override
             public void updateProgress(int time, int max, float scale) {
-                K4LVideoTrimmer.this.updateVideoProgress(time);
+                updateVideoProgress(time);
             }
         });
         mListeners.add(mVideoProgressIndicator);
