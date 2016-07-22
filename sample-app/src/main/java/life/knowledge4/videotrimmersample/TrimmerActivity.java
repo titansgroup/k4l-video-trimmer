@@ -55,4 +55,14 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
         mVideoTrimmer.destroy();
         finish();
     }
+
+    @Override
+    public void onError(final String message) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(TrimmerActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

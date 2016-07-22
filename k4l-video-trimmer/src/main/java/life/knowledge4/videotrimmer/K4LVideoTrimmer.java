@@ -166,6 +166,14 @@ public class K4LVideoTrimmer extends FrameLayout {
                 }
         );
 
+        mVideoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+            @Override
+            public boolean onError(MediaPlayer mediaPlayer, int what, int extra) {
+                mOnTrimVideoListener.onError("Something went wrong reason : " + what);
+                return false;
+            }
+        });
+
         mVideoView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, @NonNull MotionEvent event) {
