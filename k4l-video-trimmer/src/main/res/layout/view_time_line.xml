@@ -51,7 +51,7 @@
             android:id="@+id/timeVideoView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/handlerTop"/>
+            android:layout_below="@+id/handlerTop"/>
 
         <life.knowledge4.videotrimmer.view.TimeLineView
             android:id="@+id/timeLineView"

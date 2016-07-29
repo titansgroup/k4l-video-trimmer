@@ -1,0 +1,7 @@
+<resources>
+  <string name="cancel">Cancelar</string>
+  <string name="save">Salvar</string>
+  <string name="short_seconds">sec</string>
+  <string name="megabyte">MB</string>
+  <string name="kilobyte">KB</string>
+</resources>
