@@ -169,7 +169,8 @@ public class K4LVideoTrimmer extends FrameLayout {
         mVideoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
             @Override
             public boolean onError(MediaPlayer mediaPlayer, int what, int extra) {
-                mOnTrimVideoListener.onError("Something went wrong reason : " + what);
+                if (mOnTrimVideoListener != null)
+                    mOnTrimVideoListener.onError("Something went wrong reason : " + what);
                 return false;
             }
         });
@@ -256,7 +257,8 @@ public class K4LVideoTrimmer extends FrameLayout {
 
     private void onSaveClicked() {
         if (mStartPosition <= 0 && mEndPosition >= mDuration) {
-            mOnTrimVideoListener.getResult(mSrc);
+            if (mOnTrimVideoListener != null)
+                mOnTrimVideoListener.getResult(mSrc);
         } else {
             mPlayView.setVisibility(View.VISIBLE);
             mVideoView.pause();
@@ -275,6 +277,10 @@ public class K4LVideoTrimmer extends FrameLayout {
                     mStartPosition -= (MIN_TIME_FRAME - mTimeVideo);
                 }
             }
+
+            //notify that video trimming started
+            if (mOnTrimVideoListener != null)
+                mOnTrimVideoListener.onTrimStarted();
 
             BackgroundExecutor.execute(
                     new BackgroundExecutor.Task("", 0L, "") {

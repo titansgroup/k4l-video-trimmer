@@ -33,7 +33,7 @@ dependencies {
     //compile 'life.knowledge4:k4l-video-trimmer:0.1-SNAPSHOT'
     compile project(':k4l-video-trimmer')
     compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha2'
+    //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha2'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'

@@ -1,5 +1,6 @@
 package life.knowledge4.videotrimmersample;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import life.knowledge4.videotrimmer.interfaces.OnTrimVideoListener;
 public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoListener {
 
     private K4LVideoTrimmer mVideoTrimmer;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,10 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
             path = extraIntent.getStringExtra(MainActivity.EXTRA_VIDEO_PATH);
         }
 
+        //setting progressbar
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setMessage("Trimming your video...");
 
         mVideoTrimmer = ((K4LVideoTrimmer) findViewById(R.id.timeLine));
         if (mVideoTrimmer != null) {
@@ -37,7 +43,14 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
     }
 
     @Override
+    public void onTrimStarted() {
+        mProgressDialog.show();
+    }
+
+    @Override
     public void getResult(final Uri uri) {
+        mProgressDialog.cancel();
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -52,12 +65,15 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
 
     @Override
     public void cancelAction() {
+        mProgressDialog.cancel();
         mVideoTrimmer.destroy();
         finish();
     }
 
     @Override
     public void onError(final String message) {
+        mProgressDialog.cancel();
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
