@@ -316,6 +316,7 @@ public class K4LVideoTrimmer extends FrameLayout {
     }
 
     private void onCancelClicked() {
+        mVideoView.stopPlayback();
         mOnTrimVideoListener.cancelAction();
     }
 
