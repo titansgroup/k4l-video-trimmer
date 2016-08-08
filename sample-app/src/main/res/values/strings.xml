@@ -14,4 +14,5 @@
         \n\n# Works with gallery and recorded videos
     </string>
     <string name="pick_a_video">Select or record a a video below to try it out:</string>
+    <string name="trimming_progress">Trimming your video...</string>
 </resources>

@@ -8,9 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import life.knowledge4.videotrimmer.K4LVideoTrimmer;
+import life.knowledge4.videotrimmer.interfaces.OnK4LVideoListener;
 import life.knowledge4.videotrimmer.interfaces.OnTrimVideoListener;
 
-public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoListener {
+public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoListener, OnK4LVideoListener {
 
     private K4LVideoTrimmer mVideoTrimmer;
     private ProgressDialog mProgressDialog;
@@ -30,12 +31,13 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
         //setting progressbar
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setCancelable(false);
-        mProgressDialog.setMessage("Trimming your video...");
+        mProgressDialog.setMessage(getString(R.string.trimming_progress));
 
         mVideoTrimmer = ((K4LVideoTrimmer) findViewById(R.id.timeLine));
         if (mVideoTrimmer != null) {
             mVideoTrimmer.setMaxDuration(10);
             mVideoTrimmer.setOnTrimVideoListener(this);
+            mVideoTrimmer.setOnK4LVideoListener(this);
             //mVideoTrimmer.setDestinationPath("/storage/emulated/0/DCIM/CameraCustom/");
             mVideoTrimmer.setVideoURI(Uri.parse(path));
             mVideoTrimmer.setVideoInformationVisibility(true);
@@ -78,6 +80,16 @@ public class TrimmerActivity extends AppCompatActivity implements OnTrimVideoLis
             @Override
             public void run() {
                 Toast.makeText(TrimmerActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public void onVideoPrepared() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(TrimmerActivity.this, "onVideoPrepared", Toast.LENGTH_SHORT).show();
             }
         });
     }

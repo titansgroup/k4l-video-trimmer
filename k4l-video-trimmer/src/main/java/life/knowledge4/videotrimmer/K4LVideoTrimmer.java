@@ -50,6 +50,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import life.knowledge4.videotrimmer.interfaces.OnK4LVideoListener;
 import life.knowledge4.videotrimmer.interfaces.OnProgressVideoListener;
 import life.knowledge4.videotrimmer.interfaces.OnRangeSeekBarListener;
 import life.knowledge4.videotrimmer.interfaces.OnTrimVideoListener;
@@ -88,6 +89,8 @@ public class K4LVideoTrimmer extends FrameLayout {
     private List<OnProgressVideoListener> mListeners;
 
     private OnTrimVideoListener mOnTrimVideoListener;
+    private OnK4LVideoListener mOnK4LVideoListener;
+
     private int mDuration = 0;
     private int mTimeVideo = 0;
     private int mStartPosition = 0;
@@ -317,7 +320,9 @@ public class K4LVideoTrimmer extends FrameLayout {
 
     private void onCancelClicked() {
         mVideoView.stopPlayback();
-        mOnTrimVideoListener.cancelAction();
+        if (mOnTrimVideoListener != null) {
+            mOnTrimVideoListener.cancelAction();
+        }
     }
 
     private String getDestinationPath() {
@@ -390,6 +395,10 @@ public class K4LVideoTrimmer extends FrameLayout {
 
         setTimeFrames();
         setTimeVideo(0);
+
+        if (mOnK4LVideoListener != null) {
+            mOnK4LVideoListener.onVideoPrepared();
+        }
     }
 
     private void setSeekBarPosition() {
@@ -509,6 +518,16 @@ public class K4LVideoTrimmer extends FrameLayout {
     @SuppressWarnings("unused")
     public void setOnTrimVideoListener(OnTrimVideoListener onTrimVideoListener) {
         mOnTrimVideoListener = onTrimVideoListener;
+    }
+
+    /**
+     * Listener for some {@link VideoView} events
+     *
+     * @param onK4LVideoListener interface for events
+     */
+    @SuppressWarnings("unused")
+    public void setOnK4LVideoListener(OnK4LVideoListener onK4LVideoListener) {
+        mOnK4LVideoListener = onK4LVideoListener;
     }
 
     /**
