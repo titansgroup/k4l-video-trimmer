@@ -85,6 +85,28 @@
   
   * Library - Android ICS 4.1+ (API 16)
   * Sample - Android ICS 4.1+ (API 16)
+  
+# Using SNAPSHOTS
+  
+ Add the sonatype snapshots repository.
+  ```
+  'https://oss.sonatype.org/content/repositories/snapshots/'
+  ```
+  Example: 
+  ```
+  repositories{
+    flatDir{
+        dirs 'libs'
+    }
+    maven {
+        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+  }
+  ```
+  Then:
+  ```
+  compile 'life.knowledge4:k4l-video-trimmer:1.1.3-SNAPSHOT'
+  ```
 
 ## Collaboration
 There are many ways of improving and adding more features, so feel free to collaborate with ideas, issues and/or pull requests.  
