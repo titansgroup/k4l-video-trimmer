@@ -74,7 +74,6 @@ public class K4LVideoTrimmer extends FrameLayout {
 
     private SeekBar mHolderTopView;
     private RangeSeekBarView mRangeSeekBarView;
-    private RelativeLayout mLinearVideo;
     private View mTimeInfoContainer;
     private EMVideoView mVideoView;
     private ImageView mPlayView;
@@ -121,7 +120,6 @@ public class K4LVideoTrimmer extends FrameLayout {
         mHolderTopView = ((SeekBar) findViewById(R.id.handlerTop));
         mVideoProgressIndicator = ((ProgressBarView) findViewById(R.id.timeVideoView));
         mRangeSeekBarView = ((RangeSeekBarView) findViewById(R.id.timeLineBar));
-        mLinearVideo = ((RelativeLayout) findViewById(R.id.layout_surface_view));
         mVideoView = ((EMVideoView) findViewById(R.id.video_view));
         mPlayView = ((ImageView) findViewById(R.id.icon_video_play));
         mTimeInfoContainer = findViewById(R.id.timeText);
@@ -508,7 +506,7 @@ public class K4LVideoTrimmer extends FrameLayout {
     }
 
     /**
-     * Listener for some {@link VideoView} events
+     * Listener for some {@link EMVideoView} events
      *
      * @param onK4LVideoListener interface for events
      */
