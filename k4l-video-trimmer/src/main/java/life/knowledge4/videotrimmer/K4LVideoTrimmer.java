@@ -43,6 +43,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.devbrackets.android.exomedia.listener.OnCompletionListener;
+import com.devbrackets.android.exomedia.listener.OnErrorListener;
 import com.devbrackets.android.exomedia.listener.OnPreparedListener;
 import com.devbrackets.android.exomedia.ui.widget.EMVideoView;
 
@@ -174,11 +175,11 @@ public class K4LVideoTrimmer extends FrameLayout {
                 }
         );
 
-        mVideoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+        mVideoView.setOnErrorListener(new OnErrorListener() {
             @Override
-            public boolean onError(MediaPlayer mediaPlayer, int what, int extra) {
+            public boolean onError() {
                 if (mOnTrimVideoListener != null)
-                    mOnTrimVideoListener.onError("Something went wrong reason : " + what);
+                    mOnTrimVideoListener.onError("Something went wrong");
                 return false;
             }
         });
